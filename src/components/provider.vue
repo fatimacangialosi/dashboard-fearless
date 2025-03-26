@@ -19,3 +19,6 @@ const osTheme = useOsTheme()
 
 const theme = computed(() => (osTheme.value === 'dark' ? darkTheme : null))
 </script>
+
+<style scoped>
+</style>

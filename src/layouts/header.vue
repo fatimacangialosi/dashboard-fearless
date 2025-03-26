@@ -7,6 +7,7 @@
       <n-breadcrumb-item>Dashboard</n-breadcrumb-item>
       <n-breadcrumb-item>Home</n-breadcrumb-item>
     </n-breadcrumb>
+    <!-- spazio tra gli elenti a sx e quelli di dx -->
     <n-space :size="20" align="center" style="line-height: 1">
       <n-tooltip>
         <template #trigger>
@@ -16,39 +17,45 @@
         </template>
         Dashboard help
       </n-tooltip>
+      <!-- rimando a github -->
       <n-tooltip>
         <template #trigger>
-          <n-a href="https://github.com/zce/fearless" target="_blank">
+          <n-a href="https://github.com/fatimacangialosi/dashboard-fearless" target="_blank">
             <icon type="github" size="22" :depth="2" />
           </n-a>
         </template>
         View on GitHub
       </n-tooltip>
+      <!-- icona notifiche -->
       <n-popover trigger="click" placement="bottom-end" :width="300">
         <template #trigger>
           <n-badge dot processing>
             <icon type="notifications" size="22" :depth="2" />
           </n-badge>
         </template>
-        <n-tabs type="line" justify-content="space-evenly" style="--pane-padding: 0">
-          <n-tab-pane name="notifications" tab="Notifications (5)">
+        <n-tabs type="line" justify-content="space-evenly" style="--pane-padding: 6">
+          <n-tab-pane name="notifications" tab="Notifications (9)">
             <n-list style="margin: 0">
-              <n-list-item v-for="i in 5" :key="i"> Notification {{ i }} </n-list-item>
+              <n-list-item v-for="i in 9" :key="i"> Notification {{ i }} </n-list-item>
             </n-list>
           </n-tab-pane>
-          <n-tab-pane name="messages" tab="Messages (6)">
+          <n-tab-pane name="messages" tab="Messages (3)">
             <n-list style="margin: 0">
-              <n-list-item v-for="i in 6" :key="i"> Message {{ i }} </n-list-item>
+              <n-list-item v-for="i in 3" :key="i"> Message {{ i }} </n-list-item>
             </n-list>
           </n-tab-pane>
         </n-tabs>
       </n-popover>
+
+<!-- icona tonda con avatar -->
       <n-dropdown placement="bottom-end" show-arrow :options="options" @select="handleOptionsSelect">
-        <n-avatar size="small" round :src="me?.avatar" />
+        <n-avatar size="small" round :src="avatarImage" />
       </n-dropdown>
     </n-space>
   </n-layout-header>
 </template>
+<!-- fino a qui -->   
+
 
 <script lang="ts" setup>
 import { useMessage } from 'naive-ui'
@@ -71,6 +78,9 @@ const options = computed(() => [
   { key: 'divider', type: 'divider' },
   { key: 'logout', label: 'Sign out' }
 ])
+
+import avatarImage from '@/assets/my-avatar-github.jpg';
+
 
 const handleOptionsSelect = async (key: unknown): Promise<void> => {
   if ((key as string) === 'logout') {

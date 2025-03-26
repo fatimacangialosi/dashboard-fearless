@@ -77,56 +77,56 @@ router.get('/', (req, res) => {
           { id: '610159148224d543ae4e05d2', label: 'Upload', name: 'upload' }
         ].filter(Boolean)
       },
-      req.can(Role.admin) && {
-        id: '610159148224d543ae4e05d3',
-        label: 'Users',
-        icon: 'users',
-        // name: 'users',
-        children: [
-          { id: '610159148224d543ae4e05d4', label: 'All users', name: 'users' },
-          { id: '610159148224d543ae4e05d5', label: 'Roles', name: 'roles' },
-          { id: '610159148224d543ae4e05d6', label: 'Permissions', name: 'permissions' }
-        ].filter(Boolean)
-      },
-      req.can(Role.staff) && {
-        id: '610159148224d543ae4e05d7',
-        label: 'Comments',
-        icon: 'comments',
-        name: 'comments'
-      },
-      req.can(Role.admin) && {
-        id: '610159148224d543ae4e05d8',
-        label: 'Themes',
-        icon: 'themes',
-        // name: 'themes',
-        children: [
-          { id: '610159148224d543ae4e05d9', label: 'Themes', name: 'themes' },
-          { id: '610159148224d543ae4e05da', label: 'Customization', name: 'customize' },
-          { id: '610159148224d543ae4e05db', label: 'Widgets', name: 'widgets' },
-          { id: '610159148224d543ae4e05dc', label: 'Navigation', name: 'navigation' }
-        ].filter(Boolean)
-      },
-      req.can(Role.admin) && {
-        id: '610159148224d543ae4e05dd',
-        label: 'Plugins',
-        icon: 'plugins',
-        // name: 'plugins',
-        children: [
-          { id: '610159148224d543ae4e05de', label: 'Installed plugins', name: 'plugins' },
-          { id: '610159148224d543ae4e05df', label: 'Install plugin', name: 'install', params: { type: 'plugin' } }
-        ].filter(Boolean)
-      },
-      req.can(Role.owner) && {
-        id: '610159148224d543ae4e05e0',
-        label: 'Tools',
-        icon: 'tools',
-        // name: 'tools',
-        children: [
-          { id: '610159148224d543ae4e05e1', label: 'Available tools', name: 'tools' },
-          { id: '610159148224d543ae4e05e2', label: 'Import', name: 'import' },
-          { id: '610159148224d543ae4e05e3', label: 'Export', name: 'export' }
-        ].filter(Boolean)
-      },
+      // req.can(Role.admin) && {
+      //   id: '610159148224d543ae4e05d3',
+      //   label: 'Users',
+      //   icon: 'users',
+      //   // name: 'users',
+      //   children: [
+      //     { id: '610159148224d543ae4e05d4', label: 'All users', name: 'users' },
+      //     { id: '610159148224d543ae4e05d5', label: 'Roles', name: 'roles' },
+      //     { id: '610159148224d543ae4e05d6', label: 'Permissions', name: 'permissions' }
+      //   ].filter(Boolean)
+      // },
+      // req.can(Role.staff) && {
+      //   id: '610159148224d543ae4e05d7',
+      //   label: 'Comments',
+      //   icon: 'comments',
+      //   name: 'comments'
+      // },
+      // req.can(Role.admin) && {
+      //   id: '610159148224d543ae4e05d8',
+      //   label: 'Themes',
+      //   icon: 'themes',
+      //   // name: 'themes',
+      //   children: [
+      //     { id: '610159148224d543ae4e05d9', label: 'Themes', name: 'themes' },
+      //     { id: '610159148224d543ae4e05da', label: 'Customization', name: 'customize' },
+      //     { id: '610159148224d543ae4e05db', label: 'Widgets', name: 'widgets' },
+      //     { id: '610159148224d543ae4e05dc', label: 'Navigation', name: 'navigation' }
+      //   ].filter(Boolean)
+      // },
+      // req.can(Role.admin) && {
+      //   id: '610159148224d543ae4e05dd',
+      //   label: 'Plugins',
+      //   icon: 'plugins',
+      //   // name: 'plugins',
+      //   children: [
+      //     { id: '610159148224d543ae4e05de', label: 'Installed plugins', name: 'plugins' },
+      //     { id: '610159148224d543ae4e05df', label: 'Install plugin', name: 'install', params: { type: 'plugin' } }
+      //   ].filter(Boolean)
+      // },
+      // req.can(Role.owner) && {
+      //   id: '610159148224d543ae4e05e0',
+      //   label: 'Tools',
+      //   icon: 'tools',
+      //   // name: 'tools',
+      //   children: [
+      //     { id: '610159148224d543ae4e05e1', label: 'Available tools', name: 'tools' },
+      //     { id: '610159148224d543ae4e05e2', label: 'Import', name: 'import' },
+      //     { id: '610159148224d543ae4e05e3', label: 'Export', name: 'export' }
+      //   ].filter(Boolean)
+      // },
       req.can(Role.staff) && {
         id: '610159148224d543ae4e05e4',
         label: 'Settings',
